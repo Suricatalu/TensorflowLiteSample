@@ -23,21 +23,20 @@ pip install pipenv
 # Navigate to the project directory
 cd TensorflowImage
 
-# Setup Environment
-make setup
-
 # Install dependencies and create a virtual environment
-make install
+pipenv install
 
 # Enter the virtual environment
-make shell
+pipenv shell
 ```
 
 ### 2. Prepare Dataset
 
 ```bash
 # Download and prepare the dataset
-make data
+pipenv run prepare-data
+# Or run within the virtual environment
+python prepare_data.py
 ```
 
 This will:
@@ -49,7 +48,9 @@ This will:
 
 ```bash
 # Start training
-make train
+pipenv run train
+# Or run within the virtual environment
+python train_model.py
 ```
 
 The training process will:
@@ -64,14 +65,22 @@ The training process will:
 
 ```bash
 # Predict a single image
-make predict IMG=path/to/your/image.jpg
+pipenv run python predict.py path/to/your/image.jpg
+
+# Batch predict a folder of images
+pipenv run python predict.py path/to/image/folder/
+
+# Use a specified model
+pipenv run python predict.py image.jpg --model models/best_model.h5
 ```
 
 ### 5. Start Web Application
 
 ```bash
 # Start the Flask web application
-make web
+pipenv run web
+# Or
+pipenv run python web_app/app.py
 ```
 
 Then visit `http://localhost:5000` in your browser
