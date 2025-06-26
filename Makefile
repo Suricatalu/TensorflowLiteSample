@@ -105,6 +105,17 @@ tflite-predict:
 		pipenv run python tflite_predict.py --model models_tflite/cat_dog_classifier.tflite --image $(IMG); \
 	fi
 
+# Convert to TensorFlow Lite model
+convert-to-tflite:
+	@INPUT=$$(ls models/*.h5 | head -n1); \
+	if [ -z "$$INPUT" ]; then \
+		echo "❌ No .h5 model found in models/"; exit 1; \
+	fi; \
+	mkdir -p models_tflite; \
+	OUTPUT=models_tflite/$$(basename $$INPUT .h5).tflite; \
+	echo "🔄 Converting to TFLite: $$INPUT -> $$OUTPUT $(QUANTIZE)"; \
+	pipenv run python convert_to_tflite.py --input $$INPUT --output $$OUTPUT $(QUANTIZE)
+
 # Full workflow (from scratch)
 all: setup install data train
 	@echo "🎉 Full workflow completed!"

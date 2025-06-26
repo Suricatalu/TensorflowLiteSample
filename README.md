@@ -89,7 +89,7 @@ Then visit `http://localhost:5000` in your browser
 
 ```
 TensorflowImage/
-├── dataset/                    # Dataset directory
+├── dataset/                   # Dataset directory => Using Command to download these data
 │   ├── train/                 # Training data
 │   │   ├── cats/              # Cat images
 │   │   └── dogs/              # Dog images
@@ -99,7 +99,7 @@ TensorflowImage/
 │   └── test/                  # Test data
 │       ├── cats/
 │       └── dogs/
-├── models/                    # Model storage directory
+├── models/                    # Model storage directory => After training, this file will appear
 │   ├── cat_dog_classifier/    # Main model
 │   └── best_model.h5          # Best model checkpoint
 ├── web_app/                   # Web application
