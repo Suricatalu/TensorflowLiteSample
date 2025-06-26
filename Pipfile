@@ -1,0 +1,37 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tensorflow = "==2.13.0"
+matplotlib = "==3.7.1"
+numpy = "==1.24.3"
+pillow = "==10.0.0"
+flask = "==2.3.2"
+opencv-python = "==4.8.0.74"
+scikit-learn = "==1.3.0"
+seaborn = "*"
+urllib3 = "<2.0"
+
+[dev-packages]
+pytest = "*"
+black = "*"
+flake8 = "*"
+autopep8 = "*"
+jupyter = "*"
+ipykernel = "*"
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+setup = "python setup_env.py"
+prepare-data = "python prepare_data.py"
+train = "python train_model.py"
+predict = "python predict.py"
+web = "python web_app/app.py"
+test = "pytest tests/"
+format = "black ."
+lint = "flake8 ."
+tflite-predict = "python tflite_predict.py"

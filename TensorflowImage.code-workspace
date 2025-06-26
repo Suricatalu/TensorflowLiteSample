@@ -1,0 +1,99 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "pipenv",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "pipenv run black",
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      ".DS_Store": true,
+      "dataset/": false,
+      "models/": false,
+      "Pipfile.lock": false
+    },
+    "python.analysis.extraPaths": [
+      "./web_app"
+    ],
+    "terminal.integrated.env.osx": {
+      "PIPENV_VERBOSITY": "-1"
+    },
+    "terminal.integrated.env.linux": {
+      "PIPENV_VERBOSITY": "-1"
+    },
+    "terminal.integrated.env.windows": {
+      "PIPENV_VERBOSITY": "-1"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.flake8",
+      "ms-python.black-formatter",
+      "ms-toolsai.jupyter",
+      "bradlc.vscode-tailwindcss"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Pipenv: Install",
+        "type": "shell",
+        "command": "pipenv install",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Pipenv: Shell",
+        "type": "shell",
+        "command": "pipenv shell",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Train Model",
+        "type": "shell",
+        "command": "pipenv run train",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Start Web App",
+        "type": "shell",
+        "command": "pipenv run web",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ]
+  }
+}
