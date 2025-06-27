@@ -102,7 +102,7 @@ tflite-predict:
 		echo "❌ Please provide an image path: make tflite-predict IMG=path/to/image.jpg"; \
 	else \
 		echo "🔍 Running TFLite inference on: $(IMG)"; \
-		pipenv run python tflite_predict.py --model models_tflite/cat_dog_classifier.tflite --image $(IMG); \
+		pipenv run python tflite_predict.py --model models_tflite/best_model.tflite --image $(IMG); \
 	fi
 
 # Convert to TensorFlow Lite model
