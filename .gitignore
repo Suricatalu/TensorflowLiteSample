@@ -1,27 +1,27 @@
-# Python compilation and cache
+# Python 編譯與快取
 __pycache__/
 *.py[cod]
 *.so
 
-# Virtual environments and tools
+# 虛擬環境與工具
 .env
 .venv/
 env/
 venv/
 .python-version
 
-# Testing and coverage
+# 測試與 coverage
 .pytest_cache/
 .cache
 .coverage
 
-# Packaging and publishing
+# 打包與發佈
 build/
 dist/
 *.egg-info/
 MANIFEST
 
-# ML models and image results
+# ML 模型與圖像結果
 dataset/
 models/
 models_tflite/
@@ -31,17 +31,18 @@ models_tflite/
 training_history.png
 confusion_matrix.png
 
-# Web App uploaded files
+# Web App 上傳資料
 web_app/uploads/*
 !web_app/uploads/.gitkeep
 
-# IDE settings (optional)
+# IDE 設定檔（可選）
 .vscode/
+*.code-workspace
 
 # Logs
 *.log
 logs/
 
-# Temporary files
+# 臨時資料
 tmp/
 temp/
